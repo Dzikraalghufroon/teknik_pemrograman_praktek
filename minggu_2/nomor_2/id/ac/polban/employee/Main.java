@@ -2,7 +2,6 @@ package id.ac.polban.employee;
 
 import id.ac.polban.employee.model.Department;
 import id.ac.polban.employee.model.Employee;
-import id.ac.polban.employee.model.EmploymentType;
 import id.ac.polban.employee.service.EmployeeService;
 
 public class Main {
@@ -11,11 +10,10 @@ public class Main {
         EmployeeService service = new EmployeeService();
         Department IT = new Department("IT");
         Department Logistic = new Department("Logistik");
-        EmploymentType fulltime = new EmploymentType("Full-Time");
-        EmploymentType parttime = new EmploymentType("Part-Time");
 
-        Employee employee1 = new Employee("Ucok", Logistic,fulltime, 1500000);
-        Employee employee2 = new Employee("Ujang", IT, parttime, 20000000);
+
+        Employee employee1 = Employee.CreateFullTime("Ucok", Logistic, 1500000);
+        Employee employee2 = Employee.CreatePartTime("Ujang", IT,  20000000);
 
 
         service.addEmployee(employee1);

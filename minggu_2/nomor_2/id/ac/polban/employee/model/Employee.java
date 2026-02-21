@@ -1,5 +1,6 @@
 package id.ac.polban.employee.model;
 
+import static id.ac.polban.employee.model.EmploymentType.*;
 public class Employee {
     private int id;
     private String name;
@@ -15,6 +16,15 @@ public class Employee {
         this.type = type;
         this.salary = salary;
     } 
+
+    public static Employee CreateFullTime(String name, Department department, double salary){
+        return new Employee(name, department,FULL_TIME  ,salary);
+    }
+
+    public static Employee CreatePartTime(String name, Department department, double salary){
+        return new Employee(name, department,PART_TIME  ,salary);
+    }
+
     public int getId() {
         return id;
     }
